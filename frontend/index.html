@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ClaimCheck AI | Verify Claims</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            ✓
+        </div>
+
+        <div>
+
+            <h2>
+                ClaimCheck <span>AI</span>
+            </h2>
+
+            <p>
+                Facts. Not Opinions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html"
+           class="active">
+            Home
+        </a>
+
+        <a href="history.html">
+            History
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+    </nav>
+
+
+    <div class="header-right">
+
+        <button
+            type="button"
+            id="themeBtn">
+
+            ☼
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <span class="badge">
+                AI POWERED FACT CHECKING
+            </span>
+
+            <h1>
+                Multimodal Claim
+                <span>Verification AI</span>
+            </h1>
+
+            <p>
+
+                Verify claims using text, images,
+                or both. Our AI extracts claims,
+                searches reliable sources,
+                compares evidence and provides
+                a transparent verdict.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= VERIFICATION CARD ================= -->
+
+    <section class="verify-card">
+
+
+        <!-- ================= INPUT TABS ================= -->
+
+        <div class="input-tabs">
+
+
+            <button
+                type="button"
+                class="input-tab active"
+                data-mode="text">
+
+                📝
+
+                <span>
+                    Text
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="input-tab"
+                data-mode="image">
+
+                🖼️
+
+                <span>
+                    Image
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="input-tab"
+                data-mode="both">
+
+                🔗
+
+                <span>
+                    Text + Image
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- TEXT MODE                                         -->
+        <!-- ================================================= -->
+
+        <div
+            id="textInput"
+            class="input-mode">
+
+
+            <label for="claimText">
+                Enter your claim
+            </label>
+
+
+            <textarea
+                id="claimText"
+                name="claim"
+                rows="7"
+                placeholder="Enter a factual claim here...
+
+Example:
+NASA found water on Mars in 2024."></textarea>
+
+
+            <div class="input-hint">
+
+                Enter a complete factual statement
+                rather than just a topic.
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- IMAGE MODE                                        -->
+        <!-- ================================================= -->
+
+        <div
+            id="imageInput"
+            class="input-mode hidden">
+
+
+            <label>
+                Upload an image
+            </label>
+
+
+            <div
+                id="dropArea"
+                class="upload-box">
+
+
+                <div class="upload-icon">
+                    📷
+                </div>
+
+
+                <h3>
+                    Upload an image
+                </h3>
+
+
+                <p>
+                    Drag & drop your image here
+                    or browse from your device.
+                </p>
+
+
+                <button
+                    type="button"
+                    id="browseBtn"
+                    class="secondary-btn">
+
+                    Browse Image
+
+                </button>
+
+
+                <input
+                    type="file"
+                    id="imageFile"
+                    name="file"
+                    accept="image/png,image/jpeg,image/jpg,image/webp"
+                    hidden>
+
+
+            </div>
+
+
+
+            <!-- IMAGE PREVIEW -->
+
+            <div
+                id="imagePreview"
+                class="image-preview hidden">
+
+
+                <img
+                    id="previewImage"
+                    src=""
+                    alt="Uploaded image">
+
+
+                <div class="image-info">
+
+                    <span id="imageName">
+                        Image selected
+                    </span>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="removeImage"
+                    class="remove-btn">
+
+                    Remove Image
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- BOTH MODE                                         -->
+        <!-- ================================================= -->
+
+        <div
+            id="bothInput"
+            class="input-mode hidden">
+
+
+            <label for="claimTextBoth">
+                Enter your claim
+            </label>
+
+
+            <textarea
+                id="claimTextBoth"
+                name="claimBoth"
+                rows="5"
+                placeholder="Enter the claim associated with the image..."></textarea>
+
+
+            <label class="both-image-label">
+                Upload supporting image
+            </label>
+
+
+            <div
+                id="bothDropArea"
+                class="upload-box">
+
+
+                <div class="upload-icon">
+                    🖼️
+                </div>
+
+
+                <h3>
+                    Upload an image
+                </h3>
+
+
+                <p>
+                    Add an image together with your claim.
+                </p>
+
+
+                <button
+                    type="button"
+                    id="bothBrowseBtn"
+                    class="secondary-btn">
+
+                    Browse Image
+
+                </button>
+
+
+                <input
+                    type="file"
+                    id="bothImageFile"
+                    name="bothFile"
+                    accept="image/png,image/jpeg,image/jpg,image/webp"
+                    hidden>
+
+
+            </div>
+
+
+
+            <div
+                id="bothImagePreview"
+                class="image-preview hidden">
+
+
+                <img
+                    id="bothPreviewImage"
+                    src=""
+                    alt="Uploaded supporting image">
+
+
+                <span id="bothImageName">
+                    Image selected
+                </span>
+
+
+                <button
+                    type="button"
+                    id="removeBothImage"
+                    class="remove-btn">
+
+                    Remove Image
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- ERROR MESSAGE                                     -->
+        <!-- ================================================= -->
+
+        <div
+            id="errorMessage"
+            class="error-message"
+            style="display: none;">
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- ACTION BUTTONS                                    -->
+        <!-- ================================================= -->
+
+        <div class="verify-actions">
+
+
+            <button
+                type="button"
+                id="clearBtn"
+                class="clear-btn">
+
+                Clear
+
+            </button>
+
+
+            <button
+                type="button"
+                id="verifyBtn"
+                class="primary-btn">
+
+                🔍 Verify Claim
+
+            </button>
+
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- STATUS                                            -->
+        <!-- ================================================= -->
+
+        <div
+            id="verificationStatus"
+            class="verification-status"
+            style="display: none;">
+
+            <div class="status-spinner"></div>
+
+            <span>
+                Verification in progress...
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔎
+            </div>
+
+            <h3>
+                Claim Detection
+            </h3>
+
+            <p>
+                Identify factual claims
+                from your input.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🌐
+            </div>
+
+            <h3>
+                Source Search
+            </h3>
+
+            <p>
+                Search reliable sources and
+                relevant evidence.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ⚖️
+            </div>
+
+            <h3>
+                Evidence Analysis
+            </h3>
+
+            <p>
+                Compare claims against
+                available evidence.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📊
+            </div>
+
+            <h3>
+                Confidence Score
+            </h3>
+
+            <p>
+                Get a transparent confidence
+                score with every result.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 ClaimCheck AI ·
+        AI-assisted claim verification
+    </p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

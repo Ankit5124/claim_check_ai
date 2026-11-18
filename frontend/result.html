@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ClaimCheck AI | Verification Result</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            ✓
+        </div>
+
+        <div>
+
+            <h2>
+                ClaimCheck <span>AI</span>
+            </h2>
+
+            <p>
+                Facts. Not Opinions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="history.html">
+            History
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+    </nav>
+
+
+    <div class="header-right">
+
+        <button
+            id="themeBtn"
+            type="button">
+
+            ☼
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="container result-page">
+
+
+    <!-- =====================================================
+         RESULT HEADING
+    ====================================================== -->
+
+    <section class="result-heading">
+
+        <span class="badge">
+            VERIFICATION COMPLETE
+        </span>
+
+        <h1>
+            Verification Result
+        </h1>
+
+        <p>
+            Here's what our verification engine found
+            about the submitted claim.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESULT GRID
+    ====================================================== -->
+
+    <section class="result-grid">
+
+
+        <!-- =================================================
+             LEFT COLUMN
+        ================================================== -->
+
+        <div>
+
+
+            <!-- =============================================
+                 VERDICT CARD
+            ============================================== -->
+
+            <div
+                id="verdictCard"
+                class="result-card verdict-card">
+
+
+                <div class="result-card-title">
+
+                    <span>
+                        🛡️
+                    </span>
+
+                    <h2>
+                        Verification Verdict
+                    </h2>
+
+                </div>
+
+
+                <div class="verdict-content">
+
+
+                    <div
+                        id="verdictIcon"
+                        class="verdict-icon">
+
+                        ?
+
+                    </div>
+
+
+                    <div class="verdict-info">
+
+                        <h2 id="verdict">
+                            UNVERIFIED
+                        </h2>
+
+                        <p id="verdictDescription">
+                            Waiting for verification result...
+                        </p>
+
+                    </div>
+
+
+                    <!-- CONFIDENCE -->
+
+                    <div class="confidence-container">
+
+                        <div
+                            id="confidenceCircle"
+                            class="confidence-circle">
+
+                            <span id="confidence">
+                                —
+                            </span>
+
+                        </div>
+
+                        <small>
+                            Confidence
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 CLAIM CARD
+            ============================================== -->
+
+            <div class="result-card">
+
+
+                <div class="result-card-title">
+
+                    <span>
+                        📝
+                    </span>
+
+                    <h2>
+                        Claim Found
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="claimFound"
+                    class="claim-box">
+
+                    Loading claim...
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 EVIDENCE ANALYSIS
+            ============================================== -->
+
+            <div class="result-card">
+
+
+                <div class="result-card-title">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <h2>
+                        Evidence Analysis
+                    </h2>
+
+                </div>
+
+
+                <p
+                    id="evidenceAnalysis"
+                    class="analysis-text">
+
+                    Loading evidence analysis...
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 KEY POINTS
+            ============================================== -->
+
+            <div class="result-card">
+
+
+                <div class="result-card-title">
+
+                    <span>
+                        💡
+                    </span>
+
+                    <h2>
+                        Key Points
+                    </h2>
+
+                </div>
+
+
+                <ul
+                    id="keyPoints"
+                    class="key-points">
+
+                    <li>
+                        Loading verification details...
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             RIGHT COLUMN
+        ================================================== -->
+
+        <aside>
+
+
+            <!-- =============================================
+                 SOURCES
+            ============================================== -->
+
+            <div class="result-card sources-card">
+
+
+                <div class="result-card-title">
+
+                    <span>
+                        🔗
+                    </span>
+
+                    <h2>
+                        Sources &amp; Citations
+                    </h2>
+
+                </div>
+
+
+                <!-- IMPORTANT:
+                     script.js expects #sourcesList
+                -->
+
+                <div id="sourcesList">
+
+                    <div class="source">
+
+                        Loading sources...
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 VERIFICATION PROCESS
+            ============================================== -->
+
+            <div class="result-card">
+
+
+                <div class="result-card-title">
+
+                    <span>
+                        ⚙️
+                    </span>
+
+                    <h2>
+                        How We Verified
+                    </h2>
+
+                </div>
+
+
+                <div id="verificationSteps">
+
+
+                    <div class="verification-step">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Preparing verification...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 SOURCE ANALYSIS
+            ============================================== -->
+
+            <div class="result-card">
+
+
+                <div class="result-card-title">
+
+                    <span>
+                        📊
+                    </span>
+
+                    <h2>
+                        Source Analysis
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="sourceAnalysis"
+                    class="analysis-text">
+
+                    Source analysis will appear here.
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         NEW VERIFICATION
+    ====================================================== -->
+
+    <div class="new-verification">
+
+        <a
+            href="index.html"
+            class="primary-btn">
+
+            ← Verify Another Claim
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <p>
+        © 2026 ClaimCheck AI ·
+        AI-assisted claim verification
+    </p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
